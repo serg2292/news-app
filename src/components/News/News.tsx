@@ -1,7 +1,12 @@
+import { useAppSelector } from "../../hooks/hooks";
+import NewsList from "./NewsList/NewsList";
+
+
 const News = () => {
+    const { newsList } = useAppSelector((state) => state.newsList);
     return (
         <>
-            <h1>Новости</h1>
+            <NewsList newsList={newsList} />
         </>
     );
 };

@@ -1,6 +1,6 @@
 export interface INewsData {
-    Дата: string;
-    Название: string;
+    date: string;
+    name: string;
 }
 
 export interface INewsList {

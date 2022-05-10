@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { INewsList } from "../../../types/types";
+import { INewsList, IpropertyNews } from "../../../types/types";
 
 const NewsList = ({ newsList }: INewsList) => {
-  const propertyNews = ["Дата", "Название"];
+  
+  const propertyNews: IpropertyNews = ["date", "name"];
   return (
     <table>
       <thead>
         <tr>
-          {propertyNews.map((val) => (
-            <th key={`h_${val}`}>{val}</th>
+          {propertyNews.map((item) => (
+            <th key={`h_${item}`}>{item}</th>
           ))}
         </tr>
       </thead>

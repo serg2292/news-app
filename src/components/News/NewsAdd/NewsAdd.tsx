@@ -1,9 +1,9 @@
 import { FormEvent, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import { useAppDispatch } from "../../../hooks/hooks";
 import { addNews } from "../../../redux/newsDataReducer/newsDataReducer";
 
 const NewsAdd = () => {
-  const { newsList } = useAppSelector((state) => state.newsList);
+
   const dispatch = useAppDispatch();
 
   const dateNow = () => {
@@ -11,20 +11,20 @@ const NewsAdd = () => {
     return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
   }
 
-  const [addNewsField, setAddNewsField] = useState("");
+  const [addField, setAddField] = useState("");
 
   const handleSubmit = (event: FormEvent): void => {
     const news = {
       date: dateNow(),
-      name: addNewsField,
+      name: addField,
     }
     dispatch(addNews(news))
-    setAddNewsField("");
+    setAddField("");
     event.preventDefault();
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAddNewsField(event.target.value);
+    setAddField(event.target.value);
   };
 
   return (
@@ -33,7 +33,7 @@ const NewsAdd = () => {
         <input
           type="text"
           placeholder="Добавить статью"
-          value={addNewsField}
+          value={addField}
           onChange={handleChange}
         />
         <button type="submit">Добавить новость</button>

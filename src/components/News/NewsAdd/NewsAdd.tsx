@@ -6,9 +6,11 @@ const NewsAdd = () => {
 
   const dispatch = useAppDispatch();
 
+  const transformDate = (n: number) => n < 10 ? `0${n}` : n
+
   const dateNow = () => {
     const now = new Date();
-    return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
+    return `${transformDate(now.getDate())}-${transformDate(now.getMonth() + 1)}-${now.getFullYear()}`
   }
 
   const [addField, setAddField] = useState("");

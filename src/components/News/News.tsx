@@ -7,9 +7,10 @@ import NewsSearch from "./NewsSearch/NewsSearch";
 const News = () => {
     const { newsList } = useAppSelector((state) => state.newsList);
     return (
-        <><NewsAdd/>
+        <>
+            <NewsAdd />
             <NewsList newsList={newsList} />
-            <NewsSearch/>
+            <NewsSearch />
         </>
     );
 };

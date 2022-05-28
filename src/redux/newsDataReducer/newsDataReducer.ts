@@ -14,14 +14,17 @@ const newsDataSlice = createSlice({
         name:
           "В Перми закончилось строительство пешеходного перехода с 26 поворотами"
       }
-    ]
+    ],
   } as INewsList,
   reducers: {
     addNews(state, action: PayloadAction<INewsData>) {
       state.newsList = [...state.newsList, action.payload];
+    },
+    searchNews(state, action: PayloadAction<string>) {
+      state.newsList = state.newsList.filter(elem => elem.name.toLowerCase().includes(action.payload.toLowerCase()));
     }
   }
 });
 
 export default newsDataSlice.reducer;
-export const { addNews } = newsDataSlice.actions;
+export const { addNews, searchNews } = newsDataSlice.actions;

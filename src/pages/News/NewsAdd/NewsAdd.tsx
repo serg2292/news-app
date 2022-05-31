@@ -1,17 +1,12 @@
 import { FormEvent, useState } from "react";
 import { useAppDispatch } from "../../../hooks/hooks";
-import { addNews } from "../../../redux/newsDataReducer/newsDataReducer";
+import { addNews } from "../../../redux/news-data/news-data.slice";
+import { dateNow } from "../../../utils/helpers/helpers";
+
 
 const NewsAdd = () => {
 
   const dispatch = useAppDispatch();
-
-  const transformDate = (n: number) => n < 10 ? `0${n}` : n
-
-  const dateNow = () => {
-    const now = new Date();
-    return `${transformDate(now.getDate())}-${transformDate(now.getMonth() + 1)}-${now.getFullYear()}`
-  }
 
   const [addField, setAddField] = useState("");
 

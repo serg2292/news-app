@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import { INewsList, IpropertyNews } from "../../../types/types";
 
 const NewsList = ({ newsList }: INewsList) => {
-  
+
   const propertyNews: IpropertyNews = ["date", "name"];
   return (
     <table>
@@ -19,7 +18,7 @@ const NewsList = ({ newsList }: INewsList) => {
             {propertyNews.map((p) => (
               <td key={`i_${i}_${p}`}>{val[p]}</td>
             ))}
-             </tr>
+          </tr>
         ))}
       </tbody>
     </table>

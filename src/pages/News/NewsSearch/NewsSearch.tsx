@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { useAppDispatch } from "../../../hooks/hooks";
-import { searchNews } from "../../../redux/newsDataReducer/newsDataReducer";
+import { searchNews } from "../../../redux/news-data/news-data.slice";
+
 
 const NewsSearch = () => {
     const [searchField, setSearchField] = useState<string>('');

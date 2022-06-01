@@ -1,27 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { INewsList, INewsData } from "../../types/types";
+import { INewsListSlice, INewsData } from "../../types/types";
+import { initialNewsData } from "../../utils/data/data";
 
 const newsDataSlice = createSlice({
   name: "newsData",
   initialState: {
-    newsList: [
-      {
-        date: "01-10-2017",
-        name: "Ученые обнаружили новую разновидность касаток"
-      },
-      {
-        date: "05-10-2018",
-        name:
-          "В Перми закончилось строительство пешеходного перехода с 26 поворотами"
-      }
-    ],
-  } as INewsList,
+    newsList: initialNewsData,
+    newsListCopy:initialNewsData,
+  } as INewsListSlice,
   reducers: {
     addNews(state, action: PayloadAction<INewsData>) {
       state.newsList = [...state.newsList, action.payload];
+      state.newsListCopy = [...state.newsListCopy, action.payload];
     },
     searchNews(state, action: PayloadAction<string>) {
-      state.newsList = state.newsList.filter(elem => elem.name.toLowerCase().includes(action.payload.toLowerCase()));
+      state.newsList = state.newsListCopy.filter(elem => elem.name.toLowerCase().includes(action.payload.toLowerCase()));
     }
   }
 });

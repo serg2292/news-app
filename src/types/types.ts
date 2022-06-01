@@ -4,7 +4,12 @@ export interface INewsData {
 
 }
 
-export interface INewsList {
+export interface INewsListSlice {
+    newsList: INewsData[];
+    newsListCopy:INewsData[];
+}
+
+export interface INewsListComponent {
     newsList: INewsData[];
 }
 

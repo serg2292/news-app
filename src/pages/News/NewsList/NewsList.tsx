@@ -1,6 +1,6 @@
-import { INewsList, IpropertyNews } from "../../../types/types";
+import { INewsListComponent, IpropertyNews } from "../../../types/types";
 
-const NewsList = ({ newsList }: INewsList) => {
+const NewsList = ({ newsList }: INewsListComponent) => {
 
   const propertyNews: IpropertyNews = ["date", "name"];
   return (

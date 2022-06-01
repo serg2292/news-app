@@ -11,17 +11,22 @@ const NewsAdd = () => {
   const [addField, setAddField] = useState("");
 
   const handleSubmit = (event: FormEvent): void => {
-    const news = {
-      date: dateNow(),
-      name: addField,
+    if (addField.trim() !== "") {
+      const news = {
+        date: dateNow(),
+        name: addField,
+      }
+      dispatch(addNews(news))
+      setAddField("");
     }
-    dispatch(addNews(news))
-    setAddField("");
+
     event.preventDefault();
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAddField(event.target.value);
+    if (event.target.value !== "") setAddField(event.target.value);
+
+
   };
 
   return (

@@ -8,7 +8,7 @@ const NewsList = ({ newsList }: INewsListComponent) => {
       <thead>
         <tr>
           {propertyNews.map((item) => (
-            <th key={`h_${item}`}>{item}</th>
+            <th key={`h_${item}`}>{item === 'date' ? 'Дата' : 'Название статьи'}</th>
           ))}
         </tr>
       </thead>

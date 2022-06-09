@@ -7,9 +7,9 @@ const NewsPage = () => {
     const { newsList } = useAppSelector((state) => state.newsList);
     return (
         <>
-            <NewsAdd />
-            <NewsList newsList={newsList} />
             <NewsSearch />
+            <NewsList newsList={newsList} />
+            <NewsAdd />
         </>
     );
 };

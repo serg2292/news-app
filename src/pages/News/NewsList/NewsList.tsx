@@ -1,6 +1,8 @@
+import { useAppSelector } from "../../../hooks/hooks";
 import { INewsListComponent, IpropertyNews } from "../../../types/types";
 
-const NewsList = ({ newsList }: INewsListComponent) => {
+const NewsList = () => {
+  const { newsList } = useAppSelector((state) => state.newsList);
 
   const propertyNews: IpropertyNews = ["date", "name"];
   return (

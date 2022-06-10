@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../../hooks/hooks";
-import { INewsListComponent, IpropertyNews } from "../../../types/types";
+import { IpropertyNews } from "../../../types/types";
 
 const NewsList = () => {
   const { newsList } = useAppSelector((state) => state.newsList);

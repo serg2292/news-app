@@ -1,20 +1,28 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
+
+  const activeLink = 'bg-green-200 py-1 md:p-2 md:mr-10';
+  const notActiveLink = 'hover:bg-green-100 active:bg-green-200 py-1 md:p-2 md:mr-10 transition duration-200';
+
   return (
-    <header className="bg-black text-base font-semibold uppercase py-4">
-      <nav className="flex flex-col text-center container mx-auto text-white justify-between md:flex-row">
+    <header className="bg-black text-base font-semibold uppercase font-nav">
+      <nav className="flex flex-col text-center mx-auto text-white justify-between md:flex-row md:container">
         <ul className="flex flex-col text-center md:flex-row">
-          <li className="md:mr-10">
-            <Link to="/">Главная</Link>
-          </li>
-          <li>
-            <Link to="news">Новости</Link>
-          </li>
+          <NavLink to="/" className={(navData) => (navData.isActive ? activeLink : notActiveLink)}>
+            <li className="">
+              Главная
+            </li>
+          </NavLink>
+          <NavLink to="news" className={(navData) => (navData.isActive ? activeLink : notActiveLink)}>
+            <li className="">
+              Новости
+            </li>
+          </NavLink>
         </ul>
         <ul>
           <li>
-            <button className="text-base font-semibold uppercase">Вход</button>
+            <button className={`text-base font-semibold uppercase w-full md:mr-10 ${notActiveLink}`}>Вход</button>
           </li>
         </ul>
       </nav>

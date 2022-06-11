@@ -12,6 +12,7 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
+      inherit: 'inherit',
       'grey': {
         100: '#848484',
         200: '#454545',

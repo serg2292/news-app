@@ -4,12 +4,19 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'sm': {'min': '320px', 'max': '767px'},
-      'lg': {'min': '768'},
+      'sm': '480px',
+      'md': '768px',
+      'lg': '976px',
+      'xl': '1440px',
+      '2xl': '1920px',
     },
     colors: {
       transparent: 'transparent',
-      'grey': '#848484',
+      'grey': {
+        100: '#848484',
+        200: '#454545',
+        300: '#333333'
+      },
       'green': {
         100: '#1DB595',
         200: '#199C7F',
@@ -17,7 +24,7 @@ module.exports = {
       },
       'red': '#D9361A',
       'black': '#000000',
-      'white': 'ffffff'
+      'white': '#ffffff'
     },
     fontFamily: {
       nav: ['Montserrat', 'sans-serif'],

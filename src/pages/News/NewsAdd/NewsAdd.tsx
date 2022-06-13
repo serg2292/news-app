@@ -29,7 +29,7 @@ const NewsAdd = () => {
 
   return (
     <>
-      <form className="relative w-full" onSubmit={handleSubmit}>
+      <form className="w-full" onSubmit={handleSubmit}>
         {/* <button type="submit">Добавить новость</button> */}
         <input
           className="border text-grey-100 border-grey-100 focus:outline-none w-full px-2.5 py-1.5"

@@ -7,7 +7,7 @@ const NewsList = () => {
   const propertyNews: IpropertyNews = ["date", "name"];
   return (
     <table className="w-full">
-      <thead className="hidden md:table-header-group">
+      <thead className="hidden md:table-header-group font-bold text-lg">
         <tr>
           {propertyNews.map((item) => (
             <th key={`h_${item}`}>{item === 'date' ? 'Дата' : 'Название статьи'}</th>

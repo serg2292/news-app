@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { IHeaderComponent } from "../../types/types";
 
-const Header = () => {
+
+const Header = ({active, setActive}: IHeaderComponent) => {
 
   const activeLink = 'bg-green-200 py-1 md:p-2 md:mr-10';
   const notActiveLink = 'hover:bg-green-100 active:bg-green-200 py-1 md:p-2 md:mr-10 transition duration-200';
@@ -22,7 +24,7 @@ const Header = () => {
         </ul>
         <ul>
           <li>
-            <button className={`text-base font-semibold uppercase w-full md:mr-10 ${notActiveLink}`}>Вход</button>
+            <button onClick={(isModal) => setActive(true)} className={`text-base font-semibold uppercase w-full md:mr-10 ${notActiveLink}`}>Вход</button>
           </li>
         </ul>
       </nav>

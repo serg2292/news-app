@@ -25,6 +25,7 @@ module.exports = {
       },
       'red': '#D9361A',
       'black': '#000000',
+      'black-op': 'rgba(0, 0, 0, 0.5)',
       'white': '#ffffff'
     },
     fontFamily: {

@@ -1,7 +1,6 @@
 export interface INewsData {
     date: string;
     name: string;
-
 }
 
 export interface INewsListSlice {
@@ -12,5 +11,13 @@ export interface INewsListSlice {
 export interface INewsListComponent {
     newsList: INewsData[];
 }
+
+export interface IHeaderComponent {
+    active: boolean;
+    setActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface IModalComponent extends  IHeaderComponent{}
+
 
 export type IpropertyNews = [keyof INewsData, keyof INewsData]

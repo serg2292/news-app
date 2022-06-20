@@ -17,11 +17,11 @@ const Modal = ({active, setActive}: IModalComponent) => {
       onClick={event => event.stopPropagation()}
       className={active ? activeModalContentStyles : modalContentStyles}
 
-      ><form onSubmit={(e) => e.preventDefault()}>
-        <label className="font-bold text-lg ml-2.5 inline-block mb-2">Логин</label>
-        <input className="border border-grey-100 focus:outline-none w-full px-2.5 py-1.5 mb-6" type="text" />
-        <label className="font-bold text-lg ml-2.5 inline-block mb-2">Пароль</label>
-        <input className="border border-grey-100 focus:outline-none w-full px-2.5 py-1.5 mb-14" type="password" />
+      ><form className="" onSubmit={(e) => e.preventDefault()}>
+        <label htmlFor="login" className="font-bold text-lg ml-2.5 inline-block mb-2">Логин</label>
+        <input id="login" className="border border-grey-100 w-full px-2.5 py-1.5 mb-6" type="text" required/>
+        <label htmlFor="password" className="font-bold text-lg ml-2.5 inline-block mb-2">Пароль</label>
+        <input id="password" className="border border-grey-100 w-full px-2.5 py-1.5 mb-14" type="password" required/>
         <button
           className="font-semibold 
         bg-green-100 

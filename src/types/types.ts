@@ -5,7 +5,7 @@ export interface INewsData {
 
 export interface INewsListSlice {
     newsList: INewsData[];
-    newsListCopy:INewsData[];
+    newsListCopy: INewsData[];
 }
 
 export interface INewsListComponent {
@@ -17,7 +17,17 @@ export interface IHeaderComponent {
     setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export interface IModalComponent extends  IHeaderComponent{}
+export interface IModalComponent extends IHeaderComponent { }
 
 
 export type IpropertyNews = [keyof INewsData, keyof INewsData]
+
+export interface IUser {
+    login: string;
+    password: string;
+}
+
+export interface IUsersAuthSlice {
+    users: IUser[];
+    authLogin: string | null;
+}

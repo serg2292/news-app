@@ -1,16 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { INewsListSlice, INewsData } from "../../types/types";
 import { initialNewsData } from "../../utils/data/data";
+import { sortNews } from "../../utils/helpers/helpers";
 
 const newsDataSlice = createSlice({
   name: "newsData",
   initialState: {
-    newsList: initialNewsData,
+    newsList: sortNews(initialNewsData),
     newsListCopy:initialNewsData,
   } as INewsListSlice,
   reducers: {
     addNews(state, action: PayloadAction<INewsData>) {
-      state.newsList = [...state.newsList, action.payload];
+      state.newsList = [action.payload, ...state.newsList];
       state.newsListCopy = [...state.newsListCopy, action.payload];
     },
     searchNews(state, action: PayloadAction<string>) {

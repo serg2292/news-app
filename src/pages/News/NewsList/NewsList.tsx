@@ -14,7 +14,7 @@ const NewsList = () => {
           ))}
         </tr>
       </thead>
-      <tbody className="border border-t-0 border-b-0 border-grey-100 md:border-t">
+      <tbody className="border border-t-0 border-b-1 border-grey-100 md:border-t">
         {newsList.map((val, i) => (
           <tr className="last:border-b-0 border-b border-grey-100" key={`i_${i}`}>
             {propertyNews.map((p) => (

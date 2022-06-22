@@ -4,7 +4,7 @@ import NewsSearch from "../NewsSearch/NewsSearch";
 
 const NewsPage = () => {
     return (
-        <div className="container mx-auto mt-24 font-content">
+        <div className="container mx-auto mt-24 mb-8 font-content">
             <NewsSearch />
             <NewsList/>
             <NewsAdd />

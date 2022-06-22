@@ -17,9 +17,9 @@ const NewsSearch = () => {
 
     return (
         <>
-            <form className="w-full" onSubmit={handleSubmit}>
+            <form className="w-full mb-6" onSubmit={handleSubmit}>
                 <input
-                    className="w-full border text-grey-100 border-grey-100 focus:outline-none md:w-72 px-2.5 py-1.5 mb-6"
+                    className="w-full border text-grey-100 border-grey-100 focus:outline-none md:w-72 px-2.5 py-1.5"
                     type="text"
                     placeholder="Поиск новости"
                     onChange={handleChange} />

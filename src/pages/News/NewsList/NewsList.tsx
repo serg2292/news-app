@@ -6,7 +6,7 @@ const NewsList = () => {
 
   const propertyNews: IpropertyNews = ["date", "name"];
   return (
-    <table className="w-full">
+    <table className="w-full relative">
       <thead className="hidden md:table-header-group font-bold text-lg">
         <tr>
           {propertyNews.map((item) => (

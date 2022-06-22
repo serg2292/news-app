@@ -35,7 +35,7 @@ const NewsAdd = () => {
       <form className="w-full" onSubmit={handleSubmit}>
         {/* <button type="submit">Добавить новость</button> */}
         <input
-          className={authLogin === 'admin' ? newsAddStyles : newsAddStyles}
+          className={authLogin === 'admin' ? newsAddStyles : newsAddStyles + ' hidden'}
           type="text"
           placeholder="Добавить новость"
           value={addField}

@@ -5,6 +5,8 @@ import { setAuth } from "../../redux/users-auth/users-auth.slice";
 import { IModalComponent, IUser } from "../../types/types";
 import { auth } from "../../utils/helpers/helpers";
 
+import '../../App.css'
+
 const Modal = ({ active, setActive }: IModalComponent) => {
 
   const users = useAppSelector((state) => state.usersAuth.users);
@@ -14,11 +16,11 @@ const Modal = ({ active, setActive }: IModalComponent) => {
   const [passField, setPassField] = useState("");
   const [err, setErr] = useState(false);
 
-  const modalStyles = "bg-black-op w-screen h-0 fixed z-10 opacity-0";
-  const activeModalStyles = "bg-black-op w-screen h-screen fixed z-10 opacity-1 transition-opacity duration-300";
+  const modalStyles = "bg-black-op fixed z-10 opacity-0 inset-0 invisible pointer-events-auto transition-all duration-300";
+  const activeModalStyles = "bg-black-op fixed z-10 inset-0 visible pointer-events-auto opacity-100 transition-all duration-300";
 
-  const modalContentStyles = "bg-white w-80 z-20 top-0 py-9 px-5 absolute left-2/4 -translate-x-2/4";
-  const activeModalContentStyles = "bg-white w-80 z-20 py-9 px-5 absolute left-2/4 top-1/4 -translate-x-2/4 transition-top duration-300";
+  const modalContentStyles = "bg-white w-80 z-20 -top-1/4 py-9 px-5 absolute left-2/4 -translate-x-2/4 opacity-0 transition-all duration-200";
+  const activeModalContentStyles = "bg-white w-80 z-20 py-9 px-5 absolute left-2/4 top-1/4 -translate-x-2/4 opacity-100 transition-all duration-200";
 
   const errMessegeStyles = "text-red mb-5 text-xs"
 
@@ -55,15 +57,10 @@ const Modal = ({ active, setActive }: IModalComponent) => {
   }
 
   return (
-    <div onClick={() => setActive(false)}
-      className={active ? activeModalStyles : modalStyles}
-
-    >
-      <div
-        onClick={e => e.stopPropagation()}
-        className={active ? activeModalContentStyles : modalContentStyles}
-
-      ><form onSubmit={handleSubmit}>
+    <div onClick={() => setActive(false)} className={active ? activeModalStyles : modalStyles}>
+      <div onClick={e => e.stopPropagation()} className={active ? activeModalContentStyles : modalContentStyles}
+      >
+        <form onSubmit={handleSubmit}>
           <label htmlFor="login" className="font-bold text-lg ml-2.5 inline-block mb-2">Логин</label>
           <input id="login" className={err ? loginInputStyles + ' outline outline-2 outline-red' : loginInputStyles} type="text" value={loginField} onChange={changeLogin} required />
           <label htmlFor="password" className="font-bold text-lg ml-2.5 inline-block mb-2">Пароль</label>

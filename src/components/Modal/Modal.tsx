@@ -6,6 +6,7 @@ import { IModalComponent, IUser } from "../../types/types";
 import { auth } from "../../utils/helpers/helpers";
 
 import '../../App.css'
+import { activeModalContentStyle, activeModalStyle, errInvisibleMessegeStyle, errLoginInputStyle, errMessegeStyle, errPasswordInputStyle, formButtonStyle, labelStyle, loginInputStyle, modalContentStyle, modalStyle, passwordInputStyle } from "./ModalStyles";
 
 const Modal = ({ active, setActive }: IModalComponent) => {
 
@@ -15,17 +16,6 @@ const Modal = ({ active, setActive }: IModalComponent) => {
   const [loginField, setLoginField] = useState("");
   const [passField, setPassField] = useState("");
   const [err, setErr] = useState(false);
-
-  const modalStyles = "bg-black-op fixed z-10 opacity-0 inset-0 invisible pointer-events-auto transition-all duration-300";
-  const activeModalStyles = "bg-black-op fixed z-10 inset-0 visible pointer-events-auto opacity-100 transition-all duration-300";
-
-  const modalContentStyles = "bg-white w-80 z-20 -top-1/4 py-9 px-5 absolute left-2/4 -translate-x-2/4 opacity-0 transition-all duration-200";
-  const activeModalContentStyles = "bg-white w-80 z-20 py-9 px-5 absolute left-2/4 top-1/4 -translate-x-2/4 opacity-100 transition-all duration-200";
-
-  const errMessegeStyles = "text-red mb-5 text-xs"
-
-  const loginInputStyles = "border border-grey-100 w-full px-2.5 py-1.5 mb-6"
-  const passwordInputStyles = "border border-grey-100 w-full px-2.5 py-1.5 mb-2"
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,27 +47,17 @@ const Modal = ({ active, setActive }: IModalComponent) => {
   }
 
   return (
-    <div onClick={() => setActive(false)} className={active ? activeModalStyles : modalStyles}>
-      <div onClick={e => e.stopPropagation()} className={active ? activeModalContentStyles : modalContentStyles}
+    <div onClick={() => setActive(false)} className={active ? activeModalStyle : modalStyle}>
+      <div onClick={e => e.stopPropagation()} className={active ? activeModalContentStyle : modalContentStyle}
       >
         <form onSubmit={handleSubmit}>
-          <label htmlFor="login" className="font-bold text-lg ml-2.5 inline-block mb-2">Логин</label>
-          <input id="login" className={err ? loginInputStyles + ' outline outline-2 outline-red' : loginInputStyles} type="text" value={loginField} onChange={changeLogin} required />
-          <label htmlFor="password" className="font-bold text-lg ml-2.5 inline-block mb-2">Пароль</label>
-          <input id="password" className={err ? passwordInputStyles + ' outline outline-2 outline-red' : passwordInputStyles} type="password" value={passField} onChange={changePass} required />
-          <p className={err ? errMessegeStyles : errMessegeStyles + ' invisible'}>Неверные имя пользователя или пароль</p>
+          <label htmlFor="login" className={labelStyle}>Логин</label>
+          <input id="login" className={err ? errLoginInputStyle : loginInputStyle} type="text" value={loginField} onChange={changeLogin} required />
+          <label htmlFor="password" className={labelStyle}>Пароль</label>
+          <input id="password" className={err ? errPasswordInputStyle : passwordInputStyle} type="password" value={passField} onChange={changePass} required />
+          <p className={err ? errMessegeStyle : errInvisibleMessegeStyle}>Неверные имя пользователя или пароль</p>
           <button
-            className="font-semibold
-        bg-green-100
-        hover:bg-green-200
-        active:bg-green-300
-        text-white
-        w-full
-        px-28
-        py-3
-        transition
-        duration-100
-        ">Вход</button>
+            className={formButtonStyle}>Вход</button>
         </form>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { FormEvent } from "react";
 import { useAppDispatch } from "../../../hooks/hooks";
 import { searchNews } from "../../../redux/news-data/news-data.slice";
+import { inputStyle } from "./NewsSearchStyles";
 
 
 const NewsSearch = () => {
@@ -19,7 +20,7 @@ const NewsSearch = () => {
         <>
             <form className="w-full mb-6" onSubmit={handleSubmit}>
                 <input
-                    className="w-full border-b border-t md:border text-grey-100 border-grey-100 focus:outline-none md:w-72 px-2.5 py-1.5"
+                    className={inputStyle}
                     type="text"
                     placeholder="Поиск новости"
                     onChange={handleChange} />

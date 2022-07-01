@@ -1,14 +1,14 @@
 import NewsAdd from "../NewsAdd/NewsAdd";
 import NewsList from "../NewsList/NewsList";
 import NewsSearch from "../NewsSearch/NewsSearch";
+import { newsPageStyle } from "./NewsPageStyles";
 
 const NewsPage = () => {
     return (
-        <div className="md:container w-full md:mx-auto mt-24 mb-8 font-content">
+        <div className={newsPageStyle}>
             <NewsSearch />
             <NewsAdd />
             <NewsList/>
-
         </div>
     );
 };

@@ -1,46 +1,26 @@
 import { useAppSelector } from "../../../hooks/hooks";
 import { IpropertyNews } from "../../../types/types";
+import { tableStyle, tbodyStyle, tdStyle, theadStyle, trStyle } from "./NewsListStyles";
 
 const NewsList = () => {
   const { newsList } = useAppSelector((state) => state.newsList);
 
   const propertyNews: IpropertyNews = ["date", "name"];
+
   return (
-    <table className="w-full relative">
-      <thead className="hidden md:table-header-group font-bold text-lg">
+    <table className={tableStyle}>
+      <thead className={theadStyle}>
         <tr>
           {propertyNews.map((item) => (
             <th key={`h_${item}`}>{item === 'date' ? 'Дата' : 'Название статьи'}</th>
           ))}
         </tr>
       </thead>
-      <tbody className="md:border border-t-1 border-b-1 border-grey-100 md:border-t">
+      <tbody className={tbodyStyle}>
         {newsList.map((val, i) => (
-          <tr className="border-b border-t border-grey-100" key={`i_${i}`}>
+          <tr className={trStyle} key={`i_${i}`}>
             {propertyNews.map((p) => (
-              <td className="
-              border-grey-100
-              py-1
-              px-1.5
-              text-center
-              first:absolute
-              first:text-sm
-              first:left-1/2
-              first:-translate-x-1/2
-              first:text-white
-              first:bg-green-100
-              last:pt-8
-              md:first:w-1/6
-              md:first:border-r
-              md:first:border-b-1
-              md:last:5/6
-              md:first:static
-              md:first:text-black
-              md:first:bg-inherit
-              md:first:translate-x-0
-              md:first:text-base
-              md:last:py-5
-              " key={`i_${i}_${p}`}>
+              <td className={tdStyle} key={`i_${i}_${p}`}>
                 {val[p]}
               </td>
             ))}

@@ -1,30 +1,5 @@
 import { auth, capitalize, compare, dateNow, sortNews, transformDate } from "./helpers";
 
-const users = [
-    {
-        login: 'admin',
-        password: 'admin'
-    },
-    {
-        login: 'usr',
-        password: 'usr45'
-    },
-    {
-        login: 'cat',
-        password: 'fish007'
-    },
-]
-
-const admin = {
-    login: 'admin',
-    password: 'admin'
-}
-
-const guest = {
-    login: 'guest',
-    password: '12345'
-}
-
 test('transform date', () => {
     expect(transformDate(22)).toEqual('22');
     expect(transformDate(1)).toEqual('01');
@@ -41,6 +16,31 @@ test('compare', () => {
 
 
 test('auth', () => {
+    const users = [
+        {
+            login: 'admin',
+            password: 'admin'
+        },
+        {
+            login: 'usr',
+            password: 'usr45'
+        },
+        {
+            login: 'cat',
+            password: 'fish007'
+        },
+    ]
+
+    const admin = {
+        login: 'admin',
+        password: 'admin'
+    }
+
+    const guest = {
+        login: 'guest',
+        password: '12345'
+    }
+
     expect(auth(users, admin)).toEqual(true);
     expect(auth(users, guest)).toEqual(false);
 });

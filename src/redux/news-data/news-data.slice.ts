@@ -7,12 +7,12 @@ const newsDataSlice = createSlice({
   name: "newsData",
   initialState: {
     newsList: sortNews(initialNewsData),
-    newsListCopy:initialNewsData,
+    newsListCopy: sortNews(initialNewsData),
   } as INewsListSlice,
   reducers: {
     addNews(state, action: PayloadAction<INewsData>) {
       state.newsList = [action.payload, ...state.newsList];
-      state.newsListCopy = [...state.newsListCopy, action.payload];
+      state.newsListCopy = [action.payload, ...state.newsListCopy];
     },
     searchNews(state, action: PayloadAction<string>) {
       state.newsList = state.newsListCopy.filter(elem => elem.name.toLowerCase().includes(action.payload.toLowerCase()));

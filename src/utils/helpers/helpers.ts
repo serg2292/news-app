@@ -3,8 +3,7 @@ import { INewsData, IUser } from "../../types/types";
 export const transformDate = (n: number): string => (n < 10 ? `0${n}` : `${n}`);
 
 export const dateNow = () => {
-  const now = new Date();
-  return `${now.getFullYear()}-${transformDate(
+  const now = new Date();  return `${now.getFullYear()}-${transformDate(
     now.getMonth() + 1
   )}-${transformDate(now.getDate())}`;
 };

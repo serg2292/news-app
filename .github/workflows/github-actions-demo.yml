@@ -22,6 +22,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
+          config: pageLoadTimeout=100000,baseUrl=http://localhost:3000
       - name: check
         run: yarn check
 

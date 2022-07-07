@@ -18,8 +18,10 @@ jobs:
         run: yarn build
       - name: unit test
         run: yarn test
-      - name: e2e test
-        run: yarn cypress
-      - name: format
+      - name: cypress e2e test
+        uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+      - name: check
         run: yarn check
 

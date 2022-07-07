@@ -15,9 +15,11 @@ const newsDataSlice = createSlice({
       state.newsListCopy = [action.payload, ...state.newsListCopy];
     },
     searchNews(state, action: PayloadAction<string>) {
-      state.newsList = state.newsListCopy.filter(elem => elem.name.toLowerCase().includes(action.payload.toLowerCase()));
-    }
-  }
+      state.newsList = state.newsListCopy.filter((elem) =>
+        elem.name.toLowerCase().includes(action.payload.toLowerCase())
+      );
+    },
+  },
 });
 
 export default newsDataSlice.reducer;

@@ -4,13 +4,13 @@ import NewsSearch from "../NewsSearch/NewsSearch";
 import { newsPageStyle } from "./NewsPageStyles";
 
 const NewsPage = () => {
-    return (
-        <div className={newsPageStyle}>
-            <NewsSearch />
-            <NewsAdd />
-            <NewsList/>
-        </div>
-    );
+  return (
+    <div className={newsPageStyle}>
+      <NewsSearch />
+      <NewsAdd />
+      <NewsList />
+    </div>
+  );
 };
 
 export default NewsPage;

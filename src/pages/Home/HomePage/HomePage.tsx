@@ -4,7 +4,11 @@ import { HomepageHeaderStyle } from "./HomePageStyles";
 
 const HomePage = () => {
   const authLogin = useAppSelector((state) => state.usersAuth.authLogin);
-  return <h1 className={HomepageHeaderStyle}>Привет, {authLogin ? capitalize(authLogin) : 'Гость'}!</h1>;
+  return (
+    <h1 className={HomepageHeaderStyle}>
+      Привет, {authLogin ? capitalize(authLogin) : "Гость"}!
+    </h1>
+  );
 };
 
 export default HomePage;

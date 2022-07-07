@@ -1,4 +1,4 @@
-import { IUser } from '../../types/types';
+import { IUser } from "../../types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IUsersAuthSlice } from "../../types/types";
 
@@ -7,9 +7,9 @@ const usersAuthSlice = createSlice({
   initialState: {
     users: [
       {
-        login: 'admin',
-        password: 'admin123'
-      }
+        login: "admin",
+        password: "admin123",
+      },
     ],
     authLogin: null,
   } as IUsersAuthSlice,
@@ -19,9 +19,8 @@ const usersAuthSlice = createSlice({
     },
     exitAuth(state) {
       state.authLogin = null;
-    }
-
-  }
+    },
+  },
 });
 
 export default usersAuthSlice.reducer;

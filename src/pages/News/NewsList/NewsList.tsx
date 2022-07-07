@@ -1,6 +1,12 @@
 import { useAppSelector } from "../../../hooks/hooks";
 import { IpropertyNews } from "../../../types/types";
-import { tableStyle, tbodyStyle, tdStyle, theadStyle, trStyle } from "./NewsListStyles";
+import {
+  tableStyle,
+  tbodyStyle,
+  tdStyle,
+  theadStyle,
+  trStyle,
+} from "./NewsListStyles";
 
 const NewsList = () => {
   const { newsList } = useAppSelector((state) => state.newsList);
@@ -12,7 +18,9 @@ const NewsList = () => {
       <thead className={theadStyle}>
         <tr>
           {propertyNews.map((item) => (
-            <th key={`h_${item}`}>{item === 'date' ? 'Дата' : 'Название статьи'}</th>
+            <th key={`h_${item}`}>
+              {item === "date" ? "Дата" : "Название статьи"}
+            </th>
           ))}
         </tr>
       </thead>

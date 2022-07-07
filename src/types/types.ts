@@ -1,33 +1,32 @@
 export interface INewsData {
-    date: string;
-    name: string;
+  date: string;
+  name: string;
 }
 
 export interface INewsListSlice {
-    newsList: INewsData[];
-    newsListCopy: INewsData[];
+  newsList: INewsData[];
+  newsListCopy: INewsData[];
 }
 
 export interface INewsListComponent {
-    newsList: INewsData[];
+  newsList: INewsData[];
 }
 
 export interface IHeaderComponent {
-    active: boolean;
-    setActive: React.Dispatch<React.SetStateAction<boolean>>;
+  active: boolean;
+  setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export interface IModalComponent extends IHeaderComponent { }
+export interface IModalComponent extends IHeaderComponent {}
 
-
-export type IpropertyNews = [keyof INewsData, keyof INewsData]
+export type IpropertyNews = [keyof INewsData, keyof INewsData];
 
 export interface IUser {
-    login: string;
-    password: string;
+  login: string;
+  password: string;
 }
 
 export interface IUsersAuthSlice {
-    users: IUser[];
-    authLogin: string | null;
+  users: IUser[];
+  authLogin: string | null;
 }

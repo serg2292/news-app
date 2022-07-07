@@ -5,7 +5,7 @@ import Modal from "../Modal/Modal";
 import { layoutStyle } from "./LayoutStyles";
 
 const LayoutPage = () => {
-  const [modalActive, setModalActive] = useState(false)
+  const [modalActive, setModalActive] = useState(false);
 
   return (
     <div className={layoutStyle}>

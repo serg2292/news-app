@@ -6,7 +6,6 @@ import { useAppSelector } from "../../../hooks/hooks";
 import { newsAddStyle } from "./NewsAddStyles";
 
 const NewsAdd = () => {
-
   const dispatch = useAppDispatch();
   const authLogin = useAppSelector((state) => state.usersAuth.authLogin);
 
@@ -17,8 +16,8 @@ const NewsAdd = () => {
       const news = {
         date: dateNow(),
         name: addField,
-      }
-      dispatch(addNews(news))
+      };
+      dispatch(addNews(news));
       setAddField("");
     }
 
@@ -33,7 +32,9 @@ const NewsAdd = () => {
     <>
       <form className="w-full mb-6" onSubmit={handleSubmit}>
         <input
-          className={authLogin === 'admin' ? newsAddStyle : newsAddStyle + ' hidden'}
+          className={
+            authLogin === "admin" ? newsAddStyle : newsAddStyle + " hidden"
+          }
           type="text"
           placeholder="Добавить новость"
           value={addField}

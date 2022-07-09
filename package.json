@@ -28,6 +28,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,9 +38,8 @@
     "cypress-open": "cypress open",
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
-    "check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,json,css,scss,md}'"
+
   },
   "eslintConfig": {
     "extends": [

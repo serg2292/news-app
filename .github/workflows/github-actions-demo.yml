@@ -26,4 +26,7 @@ jobs:
         run: yarn test:cypress
       - name: check
         run: yarn check
+    steps:
+      - name: deploy
+        run: npm run deploy
 

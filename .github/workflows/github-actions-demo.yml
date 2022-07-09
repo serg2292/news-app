@@ -23,7 +23,7 @@ jobs:
       - name: unit test
         run: yarn test
       - name: cypress e2e test
-        uses: cypress-io/github-action@v4
+        # uses: cypress-io/github-action@v4
         run: test:cypress
         # with:
         #   browser: chrome

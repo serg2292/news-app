@@ -1,32 +1,32 @@
-# name: GitHub Actions Demo
-# on: [pull_request]
-#   # push:
-#   #   branches: [main]
-#   # pull_request:
-#   #   branches: [main]
-# jobs:
-#   init:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       matrix:
-#         node-version: [ 16.x ]
-#     steps:
-#       - uses: actions/checkout@v3
-#       - name: Staring Node.js ${{ matrix.node-version }}
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#       - name: install modules
-#         run: yarn
-#       - name: build project
-#         run: yarn build
-#       - name: unit test
-#         run: yarn test
-#       # - name: cypress e2e test
-#       #   uses: cypress-io/github-action@v4
-#       #   with:
-#       #     browser: chrome
-#       #     config: pageLoadTimeout=100000,baseUrl=http://localhost:3000
-#       - name: check
-#         run: yarn check
+name: GitHub Actions Demo
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: yarn
+      - name: build project
+        run: yarn build
+      - name: unit test
+        run: yarn test
+      # - name: cypress e2e test
+      #   uses: cypress-io/github-action@v4
+      #   with:
+      #     browser: chrome
+      #     config: pageLoadTimeout=100000,baseUrl=http://localhost:3000
+      - name: check
+        run: yarn check
 

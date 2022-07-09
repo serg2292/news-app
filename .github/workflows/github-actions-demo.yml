@@ -24,7 +24,7 @@ jobs:
         run: yarn test
       - name: cypress e2e test
         # uses: cypress-io/github-action@v4
-        run: test:cypress
+        run: yarn test:cypress
         # with:
         #   browser: chrome
         #   config: pageLoadTimeout=100000,baseUrl=http://localhost:3000

@@ -2,7 +2,7 @@
 
 describe('App E2E', () => {
   it('Should have a header', () => {
-    cy.visit('/');
+    cy.visit('./');
     cy.get('h1').should('have.text', 'Привет, Гость!')
   })
 
